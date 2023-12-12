@@ -9,15 +9,16 @@ public class CountingSort {
 
         int maxVal = Arrays.stream(nums).max().orElse(0);
 
-        int R = 10; // 10 digits
+        int R = 10;
 
         int[] aux = new int[nums.length];
         for (int exp = 1; maxVal / exp > 0; exp *= 10) {
             int[] count = new int[R];
 
-            for (int i = 0; i < nums.length; i++) {
-                count[(nums[i] / exp) % 10]++;
+            for (int num : nums) {
+                count[ (num / exp) % 10 ]++;
             }
+
             System.out.println("count = " + Arrays.toString(count));
 
             for (int i = 1; i < count.length; i++) {
