@@ -26,7 +26,6 @@ public class QuickSort {
         int run = new Random().nextInt(low, high);
         int pivot = arr[ run ];
         swap(arr, run, high);
-
         int i = low;
         for (int j = low; j < high; j++) {
             if (arr[ j ] < pivot) {

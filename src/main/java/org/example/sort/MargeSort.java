@@ -13,7 +13,7 @@ public class MargeSort {
     }
 
     private static int[] margeSort(int[] arr, int length) {
-        if (length <= 1)
+        if (length < 2)
             return arr;
 
         int mid = length / 2;
@@ -35,9 +35,10 @@ public class MargeSort {
         while (i < left && j < right) {
             if (leftSorted[ i ] <= rightSorted[ j ]) {
                 arr[ k++ ] = leftSorted[ i++ ];
-            } else {
-                arr[ k++ ] = rightSorted[ j++ ];
+                continue;
             }
+            arr[ k++ ] = rightSorted[ j++ ];
+
         }
         while (i < left) {
             arr[ k++ ] = leftSorted[ i++ ];
