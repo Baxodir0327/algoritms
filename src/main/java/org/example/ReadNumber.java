@@ -21,13 +21,13 @@ public class ReadNumber {
         String[] rooms = {"", "ming", "million", "milliard"};
         int roomIndex = 0;
 
-        String result = "";
+        StringBuilder result = new StringBuilder();
 
         while (number != 0) {
             String str3 = readNumberWithThreeRoom(number % 1000);
 
             if (!str3.isBlank()) {
-                result = str3 + " " + rooms[roomIndex] + " " + result;
+                result.insert(0, str3 + " " + rooms[ roomIndex ] + " ");
             }
             roomIndex++;
 
